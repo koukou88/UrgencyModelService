@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:/Users/khouloud/RasaTensorflow/models/nlu\\default\\current\\intent_classifier_tensorflow_embedding.ckpt"
+all_model_checkpoint_paths: "C:/Users/khouloud/RasaTensorflow/models/nlu\\default\\current\\intent_classifier_tensorflow_embedding.ckpt"
