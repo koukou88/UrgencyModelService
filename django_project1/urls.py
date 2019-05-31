@@ -24,6 +24,6 @@ urlpatterns = [
     
     
     url(r'^prediction_urgence/',views.prediction_urgence),
-    url(r'^annotation_urgence/',views.annotation_urgence),
+    
     
 ]

@@ -24,19 +24,7 @@ import numpy as np
 import pandas as pd
 import os
 
-#code khouloud
-@api_view(["POST"])
-def annotation_urgence(text):
-   try:
-      msg=json.loads(text.body)
-      message=msg["message"]
-      annotation=msg["annotation"]
-      df = pd.read_csv('D:\service3.csv', delimiter=';')
-      df.loc[len(df)]=[msg["message"],msg["annotation"]]
-      df.to_csv('D:\service3.csv', sep=';', index=False)
-      return HttpResponse(json.dumps({"message":msg["message"],"annotation":msg["annotation"]}), content_type='application/json')
-   except ValueError as e:
-        return Response(e.args[0],status.HTTP_400_BAD_REQUEST)
+
 max_words = 2000
 max_len=25
 @api_view(["POST"])
@@ -99,9 +87,7 @@ def prediction_urgence(text):
       else:
             affiche= 'not_urgent'
             r=str(1-result[0][0])
-      df = pd.read_csv('D:\service3.csv', delimiter=';')
-      df.loc[len(df)]=[msg["message"],affiche]
-      df.to_csv('D:\service3.csv', sep=';', index=False)
+      
       return HttpResponse(json.dumps({"id":msg["id"],"message":msg["message"],"label":affiche,"probability":r,"intent":rasa["intent"]["name"]}), content_type='application/json')
       #,"intent":rasa["intent"]["name"],"confidence":rasa["intent"]["confidence"]
    except ValueError as e:
