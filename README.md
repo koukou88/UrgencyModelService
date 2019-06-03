@@ -27,3 +27,6 @@ To run this project use this command:
 ```
 python manage.py runserver
 ```
+
+To test this web service input should be a json object and contains 2 key: "id" and "message" and the 2 values must be string 
+
