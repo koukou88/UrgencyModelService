@@ -2,7 +2,7 @@
 
 This is a web service created with django Framework to consume an emergency context model classification and a rasa nlu model
 
-  * The sentiment model classification classify short texts into positive, negative and neutral sentiment
+  * The sentiment model classification classify short texts into urgent and noturgent
   * The rasa nlu model classify short texts into many intents
   
   ## Install dependencies
