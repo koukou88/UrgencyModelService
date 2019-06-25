@@ -64,8 +64,8 @@ def prediction_urgence(text):
       pretraitement=gensim.parsing.preprocessing.stem_text(text)
       #prétraitement
       #modele
-      model = os.path.abspath('model_service3_pretrai.sav')
-      token = os.path.abspath('token_service3_pretrai.sav')
+      model = os.path.abspath('ml-service/model_service3_pretrai.sav')
+      token = os.path.abspath('ml-service/token_service3_pretrai.sav')
       loaded_model = pickle.load(open(model, 'rb'))
       token = pickle.load(open(token, 'rb'))
       x_input = np.array([msg["message"]])
