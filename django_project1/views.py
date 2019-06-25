@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
 
-from rasa_nlu.model import Interpreter
+#from rasa_nlu.model import Interpreter
 from keras import backend as K
 #prétraitement
 import nltk                       # the natural langauage toolkit, open-source NLP
@@ -75,10 +75,10 @@ def prediction_urgence(text):
       result = loaded_model.predict(sequences_matrix)
       #modele
       #rasa
-      rasamodel = os.path.abspath('current')
-      interpreter = Interpreter.load(rasamodel)
+      #rasamodel = os.path.abspath('current')
+      #interpreter = Interpreter.load(rasamodel)
       
-      rasa= interpreter.parse(msg["message"])
+      #rasa= interpreter.parse(msg["message"])
       K.clear_session()
       #rasa
       if result>0.7:
@@ -88,7 +88,8 @@ def prediction_urgence(text):
             affiche= 'not_urgent'
             r=str(1-result[0][0])
       
-      return HttpResponse(json.dumps({"id":msg["id"],"message":msg["message"],"label":affiche,"probability":r,"intent":rasa["intent"]["name"]}), content_type='application/json')
+      #return HttpResponse(json.dumps({"id":msg["id"],"message":msg["message"],"label":affiche,"probability":r,"intent":rasa["intent"]["name"]}), content_type='application/json')
+      return HttpResponse(json.dumps({"id":msg["id"],"message":msg["message"],"label":affiche,"probability":r}), content_type='application/json')
       #,"intent":rasa["intent"]["name"],"confidence":rasa["intent"]["confidence"]
    except ValueError as e:
       return Response(e.args[0],status.HTTP_400_BAD_REQUEST)

@@ -5,23 +5,19 @@ This is a web service created with django Framework to consume an emergency cont
   * The sentiment model classification classify short texts into urgent and noturgent
   * The rasa nlu model classify short texts into many intents
   
-  ## Install dependencies
-To get a development environment running you should :
-Install virtualenv  :
-```
-pip install virtualenv
-```
-Create a new virtual environment and easily install all libraries by running the following command :
-```
-conda create  --name venv_name  --file requirements.txt
-```
-In the file requirements.txt you find all necessary dependencies for this project.
-To activate the new environment:
-```
-source activate  venv_name
- 
-```
-## Running the tests
+
+### How do I get set up? ###
+
+The following section describes how to run the service locally.
+
+* virtualenv venv
+* source venv/bin/activate
+* pip install -r requirements.txt
+* python manage.py runserver
+* navigate to [localhost](http://127.0.0.1:8000/api/blocker/)
+
+
+## Running the webservice
  
 To run this project use this command:
 ```
