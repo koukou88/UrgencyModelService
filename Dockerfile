@@ -8,14 +8,15 @@ ENV PYTHONUNBUFFERED 1
 
 ADD . /ml-service
 
-#RUN apt-get update && apt-get update && apt-get install -y gcc build-essential autoconf cmake libtool git python-dev
+# RUN apt-get update && apt-get update && apt-get install -y gcc build-essential autoconf cmake libtool git python-dev
+RUN apk add --update alpine-sdk
 
-#RUN python -m pip install --upgrade pip setuptools wheel
+RUN python -m pip install --upgrade pip setuptools wheel
 #RUN mkdir /mybin && echo '/mybin directory created'
 #ENV PATH="/mybin:${PATH}"
 #RUN cd /mybin && ln -sf $(which gcc) x86_64-linux-gnu-gcc && x86_64-linux-gnu-gcc -v
 
-RUN pip install -r ml-service/requirements-docker.txt
+RUN pip install -r ml-service/requirements.txt
 
 
 #RUN python -m spacy download en_core_web_md
