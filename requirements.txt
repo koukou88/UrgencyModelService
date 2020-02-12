@@ -4,7 +4,7 @@ appdirs==1.4.3
 defusedxml==0.4.1
 dj-database-url==0.2.2
 dj-static==0.0.5
-Django==2.1.7
+Django==2.2.10
 djangorestframework==3.9.2
 funcsigs==1.0.2
 gunicorn==18.0
